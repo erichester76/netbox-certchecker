@@ -19,19 +19,26 @@ Key Features:
 ## install
 
 1. Get the latest release from this repository
+2. Install openssl libraries if not installed
+```
+CentOS:
+$ yum install openssl-devel libffi-devel
 
-2. install plugin
+Ubuntu:
+$ apt-get install libssl-dev libffi-dev
+```
+3. install plugin
 
 ```
 $ pip install netbox_certchecker.tar.gz
 ```
 
-3. Add netbox configuration
+4. Add netbox configuration
 
 ```
 PLUGINS = ['netbox_certchecker']
 ```
 
-4. Restart netbox service
+5. Restart netbox service
 
 5. Enjoy plugin!
