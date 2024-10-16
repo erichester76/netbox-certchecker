@@ -43,7 +43,6 @@ class Certificate(NetBoxModel):
     
     hostname = models.ManyToManyField(
         to=Hostname,
-        blank=True,
         verbose_name='Hostname',
         help_text='Hostname with certificate installed',
         null=True, 
