@@ -62,6 +62,8 @@ class Certificate(NetBoxModel):
         upload_to='netbox_certificate/%Y/%m/%d/',
         verbose_name='Certificate File',
         help_text='You can upload your certificate file. This file is not used for monitoring.'
+        null=True, 
+        blank=True
     )
     expiration_date = models.DateField(
         verbose_name="Expiration Date",
