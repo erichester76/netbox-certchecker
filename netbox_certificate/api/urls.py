@@ -1,7 +1,7 @@
 from netbox.api.routers import NetBoxRouter
 from . import views
 
-app_name = 'netbox_certificates'
+app_name = 'netbox_certificate'
 
 router = NetBoxRouter()
 router.register('certificate', views.CertificateViewSet)
