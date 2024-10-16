@@ -1,21 +1,19 @@
 from netbox.plugins import PluginMenuButton, PluginMenuItem, PluginMenu
 
 
-certchecker_buttons = [
+certificate_buttons = [
     PluginMenuButton(
-        link='plugins:netbox_certchecker:certificate_add',
+        link='plugins:netbox_certificate:certificate_add',
         title='Add',
         icon_class='mdi mdi-plus-thick',
     )
 ]
 
-
-
 cert_items = (
     PluginMenuItem(
-        link='plugins:netbox_certchecker:certificate_list',
+        link='plugins:netbox_certificate:certificate_list',
         link_text='Certificates',
-        buttons=certchecker_buttons
+        buttons=certificate_buttons
     ),
 )
 

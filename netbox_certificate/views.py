@@ -6,6 +6,12 @@ from datetime import datetime
 from django.http import FileResponse
 from django.contrib.auth.decorators import login_required
 
+class CAView(generic.ObjectView):
+    queryset = models.CA.objects.all()
+
+class HostnameView(generic.ObjectView):
+    queryset = models.CA.objects.all()
+    
 class CertificateView(generic.ObjectView):
     queryset = models.Certificate.objects.all()
 
@@ -43,9 +49,29 @@ class CertificateListView(generic.ObjectListView):
     queryset = models.Certificate.objects.all()
     table = tables.CertificateTable
 
+class CAListView(generic.ObjectListView):
+    queryset = models.CA.objects.all()
+    table = tables.CATable
+
+class HostnameListView(generic.ObjectListView):
+    queryset = models.Hostname.objects.all()
+    table = tables.HostnameTable
+
 class CertificateEditView(generic.ObjectEditView):
     queryset = models.Certificate.objects.all()
     form = forms.CertificateForm
 
+class CAEditView(generic.ObjectEditView):
+    queryset = models.CA.objects.all()
+
+class HostnameEditView(generic.ObjectEditView):
+    queryset = models.Hostname.objects.all()
+
 class CertificateDeleteView(generic.ObjectDeleteView):
     queryset = models.Certificate.objects.all()
+
+class CADeleteView(generic.ObjectDeleteView):
+    queryset = models.CA.objects.all()
+
+class HostnameDeleteView(generic.ObjectDeleteView):
+    queryset = models.Hostname.objects.all()
