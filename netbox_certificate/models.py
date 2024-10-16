@@ -8,7 +8,6 @@ class Hostname(NetBoxModel):
     name = models.CharField()
     ipaddress = models.ManyToManyField(
         to='ipam.ipaddress',
-        blank=True,
         verbose_name='IP Address',
         help_text='IP of Hostname',
         null=True, 
