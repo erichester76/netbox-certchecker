@@ -2,7 +2,7 @@ from netbox.plugins import PluginConfig
 
 
 class NetBoxCertificatesConfig(PluginConfig):
-    name = 'netbox_certificates'
+    name = 'netbox_certificate'
     verbose_name = 'Netbox Certificate Manager'
     description = 'SSL Certificate Manager'
     version = '1.0'
