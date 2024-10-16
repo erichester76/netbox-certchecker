@@ -1,1 +1,1 @@
-recursive-include netbox_certchecker/templates *
+recursive-include netbox_certificate/templates *

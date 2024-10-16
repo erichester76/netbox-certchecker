@@ -55,7 +55,7 @@ class Certificate(NetBoxModel):
     )
     
     cert_file = models.FileField(
-        upload_to='certchecker/%Y/%m/%d/',
+        upload_to='netbox_certificate/%Y/%m/%d/',
         verbose_name='Certificate File',
         help_text='You can upload your certificate file. This file is not used for monitoring.'
     )
@@ -70,7 +70,7 @@ class Certificate(NetBoxModel):
     
 
     def get_absolute_url(self):
-        return reverse('plugins:netbox_certchecker:certificate', args=[self.pk])
+        return reverse('plugins:netbox_certificate:certificate', args=[self.pk])
 
     class Meta:
         ordering = ('name',)

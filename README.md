@@ -1,4 +1,4 @@
-# netbox-certchecker-plugin
+# netbox-certificate-plugin
 ## overview
 Netbox Cert Checker is a Netbox plugin that helps you monitor SSL certificates and websites that use them.
 
@@ -30,13 +30,13 @@ $ apt-get install libssl-dev libffi-dev
 3. install plugin
 
 ```
-$ pip install netbox_certchecker.tar.gz
+$ pip install netbox_certificate.tar.gz
 ```
 
 4. Add netbox configuration
 
 ```
-PLUGINS = ['netbox_certchecker']
+PLUGINS = ['netbox_certificate']
 ```
 
 5. Restart netbox service
