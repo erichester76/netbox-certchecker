@@ -1,5 +1,5 @@
 from netbox.plugins import PluginMenuButton, PluginMenuItem, PluginMenu
-from utilities.choices import ButtonColorChoices
+
 
 certchecker_buttons = [
     PluginMenuButton(
