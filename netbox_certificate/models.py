@@ -61,7 +61,7 @@ class Certificate(NetBoxModel):
     cert_file = models.FileField(
         upload_to='netbox_certificate/%Y/%m/%d/',
         verbose_name='Certificate File',
-        help_text='You can upload your certificate file. This file is not used for monitoring.'
+        help_text='You can upload your certificate file. This file is not used for monitoring.',
         null=True, 
         blank=True
     )
