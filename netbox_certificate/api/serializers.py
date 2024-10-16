@@ -6,7 +6,7 @@ from .. import models
 class CertificateSerializer(NetBoxModelSerializer):
 
     class Meta:
-        model = models.modelsCertificate
+        model = models.Certificate
         fields = ( 'id', 'name', 'url', 'cert', 'ca', 'hostname', 'alert', 'comments', 'tags', 'custom_fields', 'created', 'last_updated')
 
 class CASerializer(NetBoxModelSerializer):
