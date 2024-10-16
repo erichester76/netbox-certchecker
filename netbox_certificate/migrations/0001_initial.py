@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('comments', models.TextField(blank=True)),
                 ('cert', models.FileField(upload_to='certchecker/%Y/%m/%d/')),
                 ('alert', models.BooleanField()),
-                ('hostname', models.ManyToManyField(blank=True, to='ipam.device')),
+                ('device', models.ManyToManyField(blank=True, to='dcim.device')),
                 ('tags', taggit.managers.TaggableManager(through='extras.TaggedItem', to='extras.Tag')),
             ],
             options={
