@@ -10,12 +10,11 @@ class Hostname(NetBoxModel):
         to='ipam.ipaddress',
         verbose_name='IP Address',
         help_text='IP of Hostname',
-        null=True, 
         blank=True
     )
 
 class CA(NetBoxModel):
-    name = models.CharField
+    name = models.CharField()
     amce = models.BooleanField(
         default=False,
         help_text='Is Certificate managed by ACME or manually requested',
@@ -30,6 +29,7 @@ class Certificate(NetBoxModel):
     tenant = models.ForeignKey(
         to='tenancy.tenant', 
         on_delete=models.PROTECT,
+        default=1
     )
     
     url = models.URLField(
@@ -45,7 +45,6 @@ class Certificate(NetBoxModel):
         to=Hostname,
         verbose_name='Hostname',
         help_text='Hostname with certificate installed',
-        null=True, 
         blank=True
     )
     
