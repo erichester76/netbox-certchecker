@@ -10,7 +10,9 @@ class Hostname(NetBoxModel):
         to='ipam.ipaddress',
         blank=True,
         verbose_name='IP Address',
-        help_text='IP of Hostname'
+        help_text='IP of Hostname',
+        null=True, 
+        blank=True
     )
 
 class CA(NetBoxModel):
@@ -45,6 +47,8 @@ class Certificate(NetBoxModel):
         blank=True,
         verbose_name='Hostname',
         help_text='Hostname with certificate installed',
+        null=True, 
+        blank=True
     )
     
     ca = models.ForeignKey(
@@ -52,6 +56,8 @@ class Certificate(NetBoxModel):
         on_delete=models.PROTECT,
         help_text='Certicate Authority.',
         verbose_name='Certicate Authority.',
+        null=True, 
+        blank=True
     )
     
     cert_file = models.FileField(
