@@ -1,7 +1,7 @@
 from netbox.plugins import PluginConfig
 
 
-class NetBoxCertificatesConfig(PluginConfig):
+class NetBoxCertificateConfig(PluginConfig):
     name = 'netbox_certificate'
     verbose_name = 'Netbox Certificate Manager'
     description = 'SSL Certificate Manager'
@@ -12,4 +12,4 @@ class NetBoxCertificatesConfig(PluginConfig):
     base_url = 'netbox_certificate'
 
 
-config = NetBoxCertificatesConfig
+config = NetBoxCertificateConfig
