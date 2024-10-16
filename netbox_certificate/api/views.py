@@ -8,7 +8,7 @@ class CertificateViewSet(NetBoxModelViewSet):
     serializer_class = serializers.CertificateSerializer
     
 class CAViewSet(NetBoxModelViewSet):
-    queryset = models.Certificate.objects.prefetch_related('tags')
+    queryset = models.CA.objects.prefetch_related('tags')
     serializer_class = serializers.CASerializer
     
 class HostnameViewSet(NetBoxModelViewSet):
