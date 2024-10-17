@@ -49,7 +49,7 @@ class CA(NetBoxModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("plugins:plugins:netbox_certificate:ca", args=[self.pk])
+        return reverse("plugins:netbox_certificate:ca", args=[self.pk])
     
     def delete(self, *args, **kwargs):
 
