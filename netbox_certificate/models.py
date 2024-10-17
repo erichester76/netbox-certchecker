@@ -11,6 +11,9 @@ class Hostname(NetBoxModel):
         verbose_name='IP Address',
         help_text='IP of Hostname',
         blank=True
+        
+    def get_absolute_url(self):
+        return reverse('plugins:netbox_certificate:hostname', args=[self.pk])
     )
 
 class CA(NetBoxModel):
@@ -21,6 +24,9 @@ class CA(NetBoxModel):
         help_text='Is Certificate managed by ACME or manually requested',
     )
      
+    def get_absolute_url(self):
+        return reverse('plugins:netbox_certificate:ca', args=[self.pk])
+    
     class Meta:
         verbose_name = ('Certificate Authority')
         verbose_name_plural = ('Certificate Authorities')
