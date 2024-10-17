@@ -19,4 +19,4 @@ class HostnameSerializer(NetBoxModelSerializer):
 
     class Meta:
          model = models.Hostname
-         fields = ('pk', 'id', 'name', 'ip_address', 'tags', 'custom_fields', 'created', 'last_updated')
+         fields = ('pk', 'id', 'name', 'ipaddress', 'tags', 'custom_fields', 'created', 'last_updated')
