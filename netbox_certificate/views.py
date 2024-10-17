@@ -4,16 +4,18 @@ from netbox.config import get_config
 from OpenSSL import crypto
 from datetime import datetime
 from django.http import FileResponse
-from django.contrib.auth.decorators import login_required
 
 class CAView(generic.ObjectView):
     queryset = models.CA.objects.all()
+    model = models.CA
 
 class HostnameView(generic.ObjectView):
     queryset = models.Hostname.objects.all()
+    model = models.Hostname
     
 class CertificateView(generic.ObjectView):
     queryset = models.Certificate.objects.all()
+    model = models.Certiciate
 
     def get_extra_context(self, request, instance):
         if not instance.cert_file:
