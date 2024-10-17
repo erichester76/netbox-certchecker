@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='certificate',
             name='expiration_date',
-            field=models.DateField(default='01/01/24'),
+            field=models.DateField(default='2024-01-01'),
         ),
         migrations.AddField(
             model_name='certificate',
