@@ -7,17 +7,17 @@ from django.http import FileResponse
 
 class CAView(generic.ObjectView):
     queryset = models.CA.objects.all()
-    table = tables.CA
+    table = tables.CATable
     template_name = 'netbox_certificate/default-detail.html'
 
 class HostnameView(generic.ObjectView):
     queryset = models.Hostname.objects.all()
-    table = tables.Hostname
+    table = tables.HostnameTable
     template_name = 'netbox_certificate/default-detail.html'
 
 class CertificateView(generic.ObjectView):
     queryset = models.Certificate.objects.all()
-    table = tables.Certificate
+    table = tables.CertificateTable
     template_name = 'netbox_certificate/default-detail.html'
 
     def get_extra_context(self, request, instance):
