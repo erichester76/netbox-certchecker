@@ -11,10 +11,11 @@ class Hostname(NetBoxModel):
         verbose_name='IP Address',
         help_text='IP of Hostname',
         blank=True
-        
+    )
+      
     def get_absolute_url(self):
         return reverse('plugins:netbox_certificate:hostname', args=[self.pk])
-    )
+    
 
 class CA(NetBoxModel):
     name = models.CharField()
