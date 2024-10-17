@@ -6,21 +6,19 @@ from datetime import datetime
 from django.http import FileResponse
 
 class CAView(generic.ObjectView):
-    template_name = 'netbox_certificate/default-detail.html'
-
     queryset = models.CA.objects.all()
-    model = models.CA
+    table = tables.CA
+    template_name = 'netbox_certificate/default-detail.html'
 
 class HostnameView(generic.ObjectView):
+    queryset = models.Hostname.objects.all()
+    table = tables.Hostname
     template_name = 'netbox_certificate/default-detail.html'
 
-    queryset = models.Hostname.objects.all()
-    model = models.Hostname
-    
 class CertificateView(generic.ObjectView):
-    template_name = 'netbox_certificate/default-detail.html'
     queryset = models.Certificate.objects.all()
-    model = models.Certificate
+    table = tables.Certificate
+    template_name = 'netbox_certificate/default-detail.html'
 
     def get_extra_context(self, request, instance):
         if not instance.cert_file:
