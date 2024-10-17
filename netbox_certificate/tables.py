@@ -26,8 +26,8 @@ class CATable(NetBoxTable):
 
     class Meta(NetBoxTable.Meta):
         model = models.CA
-        fields = ('pk', 'id', 'name', 'acme', 'actions')
-        default_columns = ('name', 'acme')
+        fields = ('pk', 'id', 'name', 'amce', 'actions')
+        default_columns = ('name', 'amce')
 
 class HostnameTable(NetBoxTable):
     name = tables.Column(
