@@ -13,10 +13,10 @@ class CASerializer(NetBoxModelSerializer):
 
     class Meta:
         model = models.CA
-        fields = ('pk', 'id', 'name', 'amce', 'comments', 'tags', 'custom_fields', 'created', 'last_updated')
+        fields = ('pk', 'id', 'name', 'amce', 'tags', 'custom_fields', 'created', 'last_updated')
         
 class HostnameSerializer(NetBoxModelSerializer):
 
     class Meta:
          model = models.Hostname
-         fields = ('pk', 'id', 'name', 'ip_address', 'comments', 'tags', 'custom_fields', 'created', 'last_updated')
+         fields = ('pk', 'id', 'name', 'ip_address', 'tags', 'custom_fields', 'created', 'last_updated')
