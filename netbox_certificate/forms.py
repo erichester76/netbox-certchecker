@@ -27,7 +27,7 @@ class CAForm(NetBoxModelForm):
     
     class Meta:
         model = models.CA
-        fields = ('name', 'acme')
+        fields = ('name', 'amce')
 
 
 class HostnameForm(NetBoxModelForm):
