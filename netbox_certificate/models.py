@@ -67,7 +67,7 @@ class Certificate(NetBoxModel):
     expiration_date = models.DateField(
         verbose_name="Expiration Date",
         help_text="Expiration Date",
-        default="01/01/24"
+        default="2024-01-01"
     )
     alert = models.BooleanField(
         default=True,
