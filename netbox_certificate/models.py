@@ -17,7 +17,7 @@ class CA(NetBoxModel):
     name = models.CharField()
     amce = models.BooleanField(
         default=False,
-        verbose_name='ACME Managed'
+        verbose_name='ACME Managed',
         help_text='Is Certificate managed by ACME or manually requested',
     )
      
