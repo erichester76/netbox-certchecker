@@ -1,5 +1,4 @@
 from netbox.forms import NetBoxModelForm
-from dcim.models import Device
 from . import models
 from django.utils.translation import gettext as _
 from utilities.forms.fields import CommentField, DynamicModelMultipleChoiceField
@@ -20,11 +19,20 @@ class CertificateForm(NetBoxModelForm):
     )
 
     class Meta:
-        model = Certificate
-        fields = ('name', 'url', 'cert', 'comments', 'device', 'alert')
+        model = models.Certificate
+        fields = ('name', 'hostname', 'tenant', 'cert', 'ca', 'expiration_date', 'comments', 'alert')
 
 class CAForm(NetBoxModelForm):
     name = forms.CharField()
+    
+    class Meta:
+        model = models.CA
+        fields = ('name', 'acme')
+
 
 class HostnameForm(NetBoxModelForm):
     name = forms.CharField()
+    
+    class Meta:
+        model = models.Hostname
+        fields = ('name', 'ip_address')
