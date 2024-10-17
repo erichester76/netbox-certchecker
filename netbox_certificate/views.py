@@ -8,15 +8,12 @@ from django.contrib.auth.decorators import login_required
 
 class CAView(generic.ObjectView):
     queryset = models.CA.objects.all()
-    template = 'generic/object.html'
 
 class HostnameView(generic.ObjectView):
     queryset = models.Hostname.objects.all()
-    template = 'generic/object.html'
     
 class CertificateView(generic.ObjectView):
     queryset = models.Certificate.objects.all()
-    template = 'generic/object.html'
 
     def get_extra_context(self, request, instance):
         if not instance.cert_file:
