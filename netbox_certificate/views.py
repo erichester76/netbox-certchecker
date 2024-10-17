@@ -63,9 +63,11 @@ class CertificateEditView(generic.ObjectEditView):
 
 class CAEditView(generic.ObjectEditView):
     queryset = models.CA.objects.all()
+    form = forms.CAForm
 
 class HostnameEditView(generic.ObjectEditView):
     queryset = models.Hostname.objects.all()
+    form = forms.HostnameForm
 
 class CertificateDeleteView(generic.ObjectDeleteView):
     queryset = models.Certificate.objects.all()

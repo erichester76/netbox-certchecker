@@ -19,6 +19,11 @@ class CA(NetBoxModel):
         default=False,
         help_text='Is Certificate managed by ACME or manually requested',
     )
+     
+    class Meta:
+        verbose_name = ('Certificate Authority')
+        verbose_name_plural = ('Certificate Authorities')
+    
     
 class Certificate(NetBoxModel):
     name = models.CharField(
