@@ -11,7 +11,7 @@ class CAView(generic.ObjectView):
     template = 'generic/object.html'
 
 class HostnameView(generic.ObjectView):
-    queryset = models.CA.objects.all()
+    queryset = models.Hostname.objects.all()
     template = 'generic/object.html'
     
 class CertificateView(generic.ObjectView):
