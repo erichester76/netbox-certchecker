@@ -36,7 +36,7 @@ class CA(NetBoxModel):
 class Certificate(NetBoxModel):
     name = models.CharField(
         max_length=254,
-        help_text='Certificate name.',
+        help_text='Certificate Name',
     )
     
     tenant = models.ForeignKey(
@@ -64,8 +64,8 @@ class Certificate(NetBoxModel):
     ca = models.ForeignKey(
         to=CA, 
         on_delete=models.PROTECT,
-        help_text='Certicate Authority.',
-        verbose_name='Certicate Authority.',
+        help_text='Certicate Authority',
+        verbose_name='Certicate Authority',
         null=True, 
         blank=True
     )
@@ -102,5 +102,5 @@ class Certificate(NetBoxModel):
         super().delete(*args, **kwargs)
 
         # Delete file from disk
-        self.cert.delete(save=False)
+        self.cert_file.delete(save=False)
 
