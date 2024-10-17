@@ -5,34 +5,56 @@ from django.urls import reverse
 
 
 class Hostname(NetBoxModel):
-    name = models.CharField()
+    name = models.CharField(        
+        max_length=254,
+        help_text='FQDN',
+        verbose_name='FQDN',
+
+    )
     ipaddress = models.ManyToManyField(
         to='ipam.ipaddress',
         verbose_name='IP Address',
         help_text='IP of Hostname',
         blank=True
     )
-      
+    
+    class Meta:
+        verbose_name = ('Hostname')
+        verbose_name_plural = ('Hostnames')
+        ordering = ("name",)
+        
     def get_absolute_url(self):
         return reverse('plugins:netbox_certificate:hostname', args=[self.pk])
-    
+
+    def delete(self, *args, **kwargs):
+        super().delete(*args, **kwargs)
 
 class CA(NetBoxModel):
-    name = models.CharField()
+    name = models.CharField(
+        max_length=254,
+        help_text='Certificate Authority',
+    )
     amce = models.BooleanField(
         default=False,
         verbose_name='ACME Managed',
-        help_text='Is Certificate managed by ACME or manually requested',
+        help_text='Is Certificate managed by ACME',
     )
-     
-    def get_absolute_url(self):
-        return reverse('plugins:netbox_certificate:ca', args=[self.pk])
     
     class Meta:
         verbose_name = ('Certificate Authority')
         verbose_name_plural = ('Certificate Authorities')
+        ordering = ("name",)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("plugins:plugins:netbox_certificate:ca", args=[self.pk])
     
-    
+    def delete(self, *args, **kwargs):
+
+        super().delete(*args, **kwargs)
+
 class Certificate(NetBoxModel):
     name = models.CharField(
         max_length=254,
