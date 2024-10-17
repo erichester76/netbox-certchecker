@@ -35,4 +35,4 @@ class HostnameForm(NetBoxModelForm):
     
     class Meta:
         model = models.Hostname
-        fields = ('name', 'ip_address')
+        fields = ('name', 'ipaddress')

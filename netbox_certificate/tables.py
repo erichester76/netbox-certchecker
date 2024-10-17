@@ -41,7 +41,7 @@ class HostnameTable(NetBoxTable):
 
     class Meta(NetBoxTable.Meta):
         model = models.Hostname
-        fields = ('pk', 'id', 'name', 'ip_address', 'actions', )
-        default_columns = ('name', 'ip_address')
+        fields = ('pk', 'id', 'name', 'ipaddress', 'actions', )
+        default_columns = ('name', 'ipaddress')
 
 
