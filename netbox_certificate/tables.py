@@ -35,7 +35,7 @@ class HostnameTable(NetBoxTable):
     )
 
     ip_address = columns.ManyToManyColumn(
-        verbose_name=_('Ip Address'),
+        verbose_name=_('IP Address'),
         linkify_item=('ipam.ipaddress', {'pk': tables.A('pk')})
     )
 

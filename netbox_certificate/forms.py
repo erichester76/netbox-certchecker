@@ -12,12 +12,6 @@ class CertificateForm(NetBoxModelForm):
     cert = forms.FileField(required=False,validators=[CertificateValidator()])
     comments = CommentField()
 
-    hostname = DynamicModelMultipleChoiceField(
-        label=_('Hostname'),
-        required=False,
-        queryset=models.Hostname.objects.all()
-    )
-
     class Meta:
         model = models.Certificate
         fields = ('name', 'hostname', 'tenant', 'cert', 'ca', 'expiration_date', 'comments', 'alert')
